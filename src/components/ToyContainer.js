@@ -1,15 +1,15 @@
 import React from "react";
 import ToyCard from "./ToyCard";
 
-function ToyContainer({toyData}) {
+function ToyContainer({toyData, deleteToy, increaseLikes}) {
 
-  const toyCards = toyData.map((toy)=>{
-    return <ToyCard key={toy.id} name={toy.name} img={toy.image} likes={toy.likes}/>
+  const toyComponents = toyData.map(toy =>{
+    return <ToyCard key={toy.id} {...toy} deleteToy={deleteToy} increaseLikes={increaseLikes}/>
   })
 
   return (
     <div id="toy-collection">
-      {toyCards}
+      {toyComponents}
     </div>
   );
 }
