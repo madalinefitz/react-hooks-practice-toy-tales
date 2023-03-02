@@ -3,13 +3,13 @@ import ToyCard from "./ToyCard";
 
 function ToyContainer({toyData, deleteToy, increaseLikes}) {
 
-  const toyComponents = toyData.map(toy =>{
-    return <ToyCard key={toy.id} {...toy} deleteToy={deleteToy} increaseLikes={increaseLikes}/>
+  const toyComponents = toyData.map(toy=>{
+      return (<ToyCard key={toy.id} {...toy} deleteToy={deleteToy} increaseLikes={increaseLikes}/>)
   })
 
   return (
     <div id="toy-collection">
-      {toyComponents}
+     {toyComponents}
     </div>
   );
 }
